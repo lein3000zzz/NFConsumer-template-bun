@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+package news.v1;
+
+message NewsAnalyzed {
+  Source source = 1;
+
+  string title = 2;
+  string content = 3;
+
+  int64 published_at = 4;
+  int64 ingested_at = 5;
+  int64 prepared_at = 6;
+
+  google.protobuf.Struct analysis = 7;
+}
+
+message Source {
+  string name = 1;
+  float credibility = 2;
+}
