@@ -38,7 +38,7 @@ class KafkaConsumer {
             await this.consumer.connect();
             logger.info(`Consumer connected to topic: ${this.topic}`);
 
-            await this.consumer.subscribe({ topic: this.topic, fromBeginning: true });
+            await this.consumer.subscribe({ topic: this.topic, fromBeginning: false });
 
             await this.consumer.run({
                 eachMessage: async ({ message }) => {
